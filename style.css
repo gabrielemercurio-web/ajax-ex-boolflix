@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
 }
 
-.container {
+.menu-container {
     width: 1420px;
     height: 100%;
     margin: 0 auto;
@@ -19,12 +19,59 @@ body {
 header {
     width: 100%;
     height: 150px;
-    background: linear-gradient(180deg, rgba(0,0,0,1) -90%, rgba(0,0,0,0) 85%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) -10%, rgba(0,0,0,0) 90%);
 }
 
-header img {
+header img.logo {
     height: 50px;
-    margin-top: 40px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: 0px;
+}
+
+button.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.search .material-icons {
+    line-height: 0;
+    font-size: 20px;
+}
+
+.form-control {
+    background-color: transparent;
+    border-color: #fff7;
+}
+
+.form-control[:placeholder] {
+    color: red;
+}
+
+.form-control:focus {
+    color: #fff9;
+    background-color: transparent;
+    border-color: red;
+    box-shadow: none;
+}
+
+.btn-outline-secondary {
+    border-color: #fff7;
+}
+
+.input-group {
+    width: auto;
+    outline: none;
+}
+
+.mb-3 {
+    margin-bottom: 0px !important;
 }
 
 .dvd-container {
@@ -34,3 +81,20 @@ header img {
     flex-wrap: wrap;
     /* padding: 100px 0; */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* END */
