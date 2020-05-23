@@ -6,15 +6,32 @@ $(document).ready(function() {
     // intercetto il click sul bottone 'Cerca'
     $('.search').click(function () {
 
+        $('.dvd-container li').remove();
+        cerca_film();
+
+    });
+
+    // intercetto il tasto Enter sulla tastiera
+    $('.input-cerca').keypress(function (event) {
+        if (event.which == 13) {
+
+            $('.dvd-container li').remove();
+            cerca_film();
+        }
+    });
+
+    function cerca_film () {
+
         //leggo la query inserita dall'utente all'interno dell'input
         var input_utente = $('.input-cerca').val();
         console.log(input_utente);
 
+        // effettuo una chiamata ajax per prelevare alcuni dati dall'api
         $.ajax ({
             'url': 'https://api.themoviedb.org/3/search/movie',
             'method': 'GET',
             'success': function(data) {
-                console.log(data);
+
                 var risposta_api = data.results;
 
                 for (var i = 0; i < risposta_api.length; i++) {
@@ -34,12 +51,15 @@ $(document).ready(function() {
 
             'data': {
                 'api_key': 'd9712716ad212136c0d42333f3638448',
-                'query': input_utente, // <-- qui andrà una var con il .val() dell'input
+                'query': input_utente, // <-- .val() dell'input inserito dall'utente
                 'language': 'it'
             },
         });
 
-    });
+        // svuoto il campo input dopo ogni ricerca
+        $('.input-cerca').val('');
+
+    } // <-- Fine funzione cerca_film
 
 });
 
@@ -50,57 +70,4 @@ $(document).ready(function() {
 
 
 
-
-
-
-
 // END
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//
-// $.ajax ({
-//     'url': 'https://flynn.boolean.careers/exercises/api/array/music',
-//     'method': 'GET',
-//     'success': function (data) {
-//         var response = data.response;
-//
-//         for (var i = 0; i < response.length; i++) {
-//             var titolo = response[i]['title'];
-//             var copertina = response[i]['poster'];
-//             var genere = response[i]['genre'];
-//             var anno = response[i]['year'];
-//             var autore = response[i]['author'];
-//
-//             var single_disc = {
-//                 'poster': copertina,
-//                 'title': titolo,
-//                 'author': autore,
-//                 'year': anno,
-//                 'genre': genere
-//             };
-//
-//             var cd = template(single_disc);
-//
-//             $('.cds-container').append(cd);
-//         }
-//
-//     },
-//
-//     'error': function () {
-//         console.log('Errore!');
-//     }
-//
-// });
