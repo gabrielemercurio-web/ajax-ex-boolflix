@@ -10,16 +10,18 @@ body {
     min-height: 100vh;
 }
 
-.menu-container {
+.wp-container {
     width: 1420px;
     height: 100%;
     margin: 0 auto;
 }
 
 header {
+    position: fixed;
     width: 100%;
-    height: 150px;
-    background: linear-gradient(180deg, rgba(0,0,0,0.7) -10%, rgba(0,0,0,0) 90%);
+    height: 250px;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    z-index: 10;
 }
 
 header img.logo {
@@ -32,6 +34,7 @@ header img.logo {
     align-items: center;
     background-color: transparent;
     border: 0px;
+    padding-bottom: 100px;
 }
 
 button.search {
@@ -50,10 +53,6 @@ button.search .material-icons {
     border-color: #fff7;
 }
 
-.form-control[:placeholder] {
-    color: red;
-}
-
 .form-control:focus {
     color: #fff9;
     background-color: transparent;
@@ -65,6 +64,11 @@ button.search .material-icons {
     border-color: #fff7;
 }
 
+.btn-outline-secondary:focus {
+    box-shadow: none;
+    border-color: red;
+}
+
 .input-group {
     width: auto;
     outline: none;
@@ -74,12 +78,24 @@ button.search .material-icons {
     margin-bottom: 0px !important;
 }
 
+.flix-jumbotron {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://weekendynamic.files.wordpress.com/2019/03/in-en-20190311-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    opacity: 0.8;
+}
+
 .dvd-container {
     display: flex;
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
     /* padding: 100px 0; */
+}
+
+.dvd-container li {
+    list-style: none;
+    color: #fff;
 }
 
 
