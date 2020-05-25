@@ -17,7 +17,7 @@
     <body>
 
         <header>
-            <div class="menu wp-container">
+            <div class="wp-menu wp-container">
 
                 <img class="logo" src="https://i.ya-webdesign.com/images/netflix-logo-png-black-3.png" alt="logo">
 
@@ -31,13 +31,22 @@
             </div>
         </header>
 
-        <section class="flix-jumbotron"></section>
+        <main class="wp-container">
+            <h5 id="risultato-ricerca">
+                Risultati per:
+                "<span class="ricerca-utente"></span>"
+            </h5>
+            <section class="movie-container container"></section>
+        </main>
 
-        <div class="dvd-container container">
-            <ul></ul>
-        </div>
 
-        <script id="disc-template" type="text/x-handlebars-template">
+        <script id="movie-template" type="text/x-handlebars-template">
+            <ul>
+                <li>{{ titolo }}</li>
+                <li>{{ titolo_originale }}</li>
+                <li>{{ lingua }}</li>
+                <li>{{{ voto }}}</li>
+            </ul>
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
