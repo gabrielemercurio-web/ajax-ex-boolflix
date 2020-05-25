@@ -12,13 +12,15 @@
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 
+        <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+
         <title>BoolFlix</title>
     </head>
     <body>
 
         <header>
-            <div class="wp-menu wp-container">
 
+            <div class="wp-menu wp-container">
                 <img class="logo" src="https://i.ya-webdesign.com/images/netflix-logo-png-black-3.png" alt="logo">
 
                 <div class="input-group mb-3">
@@ -27,24 +29,27 @@
                         <button class="search btn btn-outline-secondary" type="button" id="button-addon2"> <i class="material-icons">search</i> </button>
                     </div>
                 </div>
-
             </div>
+
         </header>
 
         <main class="wp-container">
+
             <h5 id="risultato-ricerca">
                 Risultati per:
                 "<span class="ricerca-utente"></span>"
             </h5>
             <section class="movie-container container"></section>
+
         </main>
+
 
 
         <script id="movie-template" type="text/x-handlebars-template">
             <ul>
                 <li>{{ titolo }}</li>
                 <li>{{ titolo_originale }}</li>
-                <li>{{ lingua }}</li>
+                <li class="bandiera {{ lingua }}">{{ lingua }}</li>
                 <li>{{{ voto }}}</li>
             </ul>
         </script>

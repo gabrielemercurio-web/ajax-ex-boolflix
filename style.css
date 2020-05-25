@@ -112,9 +112,53 @@ main {
 }
 
 .star_border {
-    color: rgba(242,154,59,.2);
+    color: rgb(85 57 0);
 }
 
+.flag-italiano {
+    width: 24px;
+    height: 24px;
+    background: url('https://api.iconify.design/emojione-v1:flag-for-italy.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.flag-inglese {
+    width: 24px;
+    height: 24px;
+    background: url('https://api.iconify.design/emojione-v1:flag-for-united-kingdom.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.flag-spagnolo {
+    width: 24px;
+    height: 24px;
+    background: url('https://api.iconify.design/emojione-v1:flag-for-spain.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.flag-francese {
+    width: 24px;
+    height: 24px;
+    background: url('https://api.iconify.design/emojione-v1:flag-for-france.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.flag-tedesco {
+    width: 24px;
+    height: 24px;
+    background: url('https://api.iconify.design/emojione-v1:flag-for-germany.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
 
 
 

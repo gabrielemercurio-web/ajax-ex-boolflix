@@ -51,14 +51,13 @@ $(document).ready(function() {
                         var movie = {
                             'titolo': risposta_api[i].title,
                             'titolo_originale': risposta_api[i].original_title,
-                            'lingua': risposta_api[i].original_language,
-                            'voto': genenera_stella(risposta_api[i].vote_average)
+                            'lingua': genera_bandiera(risposta_api[i].original_language),
+                            'voto': genera_stella(risposta_api[i].vote_average)
                         };
 
                         var html_card = template(movie);
                         $('.movie-container').append(html_card);
                     }
-
                 },
 
                 'error': function () {
@@ -66,21 +65,20 @@ $(document).ready(function() {
                 }
 
             });
-
             // svuoto il campo input dopo ogni ricerca
             $('.input-cerca').val('');
 
         } else {
             $('.input-cerca').val('');
             alert('Attenzione! Devi digitare almeno 2 caratteri.');
-            }
-
+        }
     } // <-- Fine funzione cerca_film
-
 });
 
 
-function genenera_stella(voti) {
+
+
+function genera_stella(voti) {
     // trasformo la votazione da 1/10 a 1/5
     var voto_medio = Math.ceil(voti / 2);
     var stella_piena = '';
@@ -99,6 +97,25 @@ function genenera_stella(voti) {
 
 
 
+
+function genera_bandiera(flag) {
+
+    var bandiera = flag;
+
+    if (bandiera == 'en' || bandiera == 'us') {
+        $('.en').addClass('flag-inglese').text('');
+    } else if (bandiera == 'it'){
+        $('.it').addClass('flag-italiano').text('');
+    } else if (bandiera == 'es') {
+        $('.es').addClass('flag-spagnolo').text('');
+    } else if (bandiera == 'fr') {
+        $('.fr').addClass('flag-francese').text('');
+    } else if (bandiera == 'de') {
+        $('.de').addClass('flag-tedesco').text('');
+    }
+
+    return flag;
+}
 
 
 
