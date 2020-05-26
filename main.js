@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 
     var source = $("#movie-template").html();
@@ -28,7 +27,7 @@ $(document).ready(function() {
 
             $('.dvd-container li').remove();
 
-            // effettuo una chiamata ajax per prelevare alcuni dati dall'api
+            // effettuo una chiamata ajax per prelevare i dati dei FILM
             $.ajax ({
                 'url': 'https://api.themoviedb.org/3/search/movie',
                 'method': 'GET',
@@ -41,8 +40,8 @@ $(document).ready(function() {
                 'success': function(data) {
 
                     // Titolo dei risultati di ricerca nel DOM'
-                    $('.ricerca-utente').text(input_utente);
-                    $('#risultato-ricerca').addClass('visible');
+                    $('.ricerca-utente-film').text('Film per: ' + '"' + input_utente + '"');
+                    $('#risultato-ricerca-film').addClass('visible');
 
                     var risposta_api = data.results;
 
@@ -51,12 +50,13 @@ $(document).ready(function() {
                         var movie = {
                             'titolo': risposta_api[i].title,
                             'titolo_originale': risposta_api[i].original_title,
-                            'lingua': genera_bandiera(risposta_api[i].original_language),
+                            'lingua': risposta_api[i].original_language,
                             'voto': genera_stella(risposta_api[i].vote_average)
                         };
 
                         var html_card = template(movie);
                         $('.movie-container').append(html_card);
+                        genera_bandiera(risposta_api[i].original_language)
                     }
                 },
 
@@ -65,6 +65,46 @@ $(document).ready(function() {
                 }
 
             });
+
+            // effettuo una chiamata ajax per prelevare i dati delle SERIE TV
+            $.ajax ({
+                'url': 'https://api.themoviedb.org/3/search/tv',
+                'method': 'GET',
+                'data': {
+                    'api_key': 'd9712716ad212136c0d42333f3638448',
+                    'query': input_utente, // <-- .val() dell'input inserito dall'utente
+                    'language': 'it'
+                },
+
+                'success': function(data) {
+
+                    // Titolo h5 dei risultati di ricerca nel DOM'
+                    $('.ricerca-utente-serietv').text('Serie TV: ' + '"' + input_utente + '"');
+                    $('#risultato-ricerca-serietv').addClass('visible');
+
+                    var risposta_api = data.results;
+
+                    for (var i = 0; i < risposta_api.length; i++) {
+
+                        var movie = {
+                            'titolo': risposta_api[i].name,
+                            'titolo_originale': risposta_api[i].original_name,
+                            'lingua': risposta_api[i].original_language,
+                            'voto': genera_stella(risposta_api[i].vote_average)
+                        };
+
+                        var html_card = template(movie);
+                        $('.serietv-container').append(html_card);
+                        genera_bandiera(risposta_api[i].original_language)
+                    }
+                },
+
+                'error': function () {
+                    console.log('Errore!');
+                }
+
+            });
+
             // svuoto il campo input dopo ogni ricerca
             $('.input-cerca').val('');
 

@@ -12,8 +12,6 @@
         <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 
-        <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-
         <title>BoolFlix</title>
     </head>
     <body>
@@ -35,11 +33,17 @@
 
         <main class="wp-container">
 
-            <h5 id="risultato-ricerca">
-                Risultati per:
-                "<span class="ricerca-utente"></span>"
+            <h5 id="risultato-ricerca-film">
+                Risultati di
+                <span class="ricerca-utente-film"></span>
             </h5>
             <section class="movie-container container"></section>
+
+            <h5 id="risultato-ricerca-serietv">
+                Risultati di
+                <span class="ricerca-utente-serietv"></span>
+            </h5>
+            <section class="serietv-container container"></section>
 
         </main>
 
@@ -49,11 +53,13 @@
             <ul>
                 <li>{{ titolo }}</li>
                 <li>{{ titolo_originale }}</li>
-                <li class="bandiera {{ lingua }}">{{ lingua }}</li>
+                <li class="flags {{ lingua }}">{{ lingua }}</li>
                 <li>{{{ voto }}}</li>
+                <li>{{ tipo }}</li>
             </ul>
         </script>
 
+        <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="main.js" charset="utf-8"></script>
     </body>

@@ -80,30 +80,34 @@ button.search .material-icons {
 
 main {
     padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#risultato-ricerca {
+#risultato-ricerca-film, #risultato-ricerca-serietv {
     color: #fff;
     display: none;
     margin-bottom: 30px;
 }
 
-#risultato-ricerca.visible {
+#risultato-ricerca-film.visible, #risultato-ricerca-serietv.visible {
     display: block;
 }
 
-.movie-container {
+.movie-container, .serietv-container {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
     flex-wrap: wrap;
-    /* padding: 100px 0; */
+    margin-bottom: 50px;
 }
 
-.movie-container ul {
+.movie-container ul, .serietv-container ul {
+    width: 180px;
     list-style-type: none;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #fff;
 }
 
@@ -115,9 +119,12 @@ main {
     color: rgb(85 57 0);
 }
 
-.flag-italiano {
+.flags {
     width: 24px;
     height: 24px;
+}
+
+.flag-italiano {
     background: url('https://api.iconify.design/emojione-v1:flag-for-italy.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -125,8 +132,6 @@ main {
 }
 
 .flag-inglese {
-    width: 24px;
-    height: 24px;
     background: url('https://api.iconify.design/emojione-v1:flag-for-united-kingdom.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -134,8 +139,6 @@ main {
 }
 
 .flag-spagnolo {
-    width: 24px;
-    height: 24px;
     background: url('https://api.iconify.design/emojione-v1:flag-for-spain.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -143,8 +146,6 @@ main {
 }
 
 .flag-francese {
-    width: 24px;
-    height: 24px;
     background: url('https://api.iconify.design/emojione-v1:flag-for-france.svg');
     background-repeat: no-repeat;
     background-position: center;
@@ -152,8 +153,6 @@ main {
 }
 
 .flag-tedesco {
-    width: 24px;
-    height: 24px;
     background: url('https://api.iconify.design/emojione-v1:flag-for-germany.svg');
     background-repeat: no-repeat;
     background-position: center;
