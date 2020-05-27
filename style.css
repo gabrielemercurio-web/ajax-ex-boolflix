@@ -95,21 +95,51 @@ main {
     display: block;
 }
 
-.movie-container, .serietv-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
+.grid-container {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: auto auto auto auto auto auto;
     margin-bottom: 50px;
 }
 
-.movie-container ul, .serietv-container ul {
-    width: 180px;
+ul.poster {
+    width: 100%;
     list-style-type: none;
-    color: #fff;
-    padding: 15px;
-    border: 1px solid #fff;
+    padding: 5px;
+    cursor: pointer;
 }
+
+.poster li {
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+ul.poster:hover li {
+    transform: scale(1.05);
+    opacity: 0.07;
+}
+
+.poster img {
+    width: 100%;
+}
+
+ul.info {
+    padding: 15px;
+    color: #fff;
+    list-style-type: none;
+}
+
+ul.info li {
+    font-weight: 200;
+    width: 160px;
+    margin-bottom: 15px;
+    line-height: 20px;
+}
+
+ul.info strong {
+    font-weight: 700;
+}
+
 
 .star {
     color: orange;
@@ -127,14 +157,14 @@ main {
 .flag-italiano {
     background: url('https://api.iconify.design/emojione-v1:flag-for-italy.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     background-size: contain;
 }
 
 .flag-inglese {
     background: url('https://api.iconify.design/emojione-v1:flag-for-united-kingdom.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     background-size: contain;
 }
 
@@ -148,14 +178,14 @@ main {
 .flag-francese {
     background: url('https://api.iconify.design/emojione-v1:flag-for-france.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     background-size: contain;
 }
 
 .flag-tedesco {
     background: url('https://api.iconify.design/emojione-v1:flag-for-germany.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     background-size: contain;
 }
 

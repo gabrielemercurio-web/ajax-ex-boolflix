@@ -22,7 +22,7 @@
                 <img class="logo" src="https://i.ya-webdesign.com/images/netflix-logo-png-black-3.png" alt="logo">
 
                 <div class="input-group mb-3">
-                    <input type="text" class="input-cerca form-control" placeholder="Cerca" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type="text" class="input-cerca form-control" placeholder="Cerca" value="batman" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="search btn btn-outline-secondary" type="button" id="button-addon2"> <i class="material-icons">search</i> </button>
                     </div>
@@ -37,26 +37,36 @@
                 Risultati di
                 <span class="ricerca-utente-film"></span>
             </h5>
-            <section class="movie-container container"></section>
+
+            <section class="movie grid-container">
+                <!-- GRIGLIA FILM -->
+            </section>
 
             <h5 id="risultato-ricerca-serietv">
                 Risultati di
                 <span class="ricerca-utente-serietv"></span>
             </h5>
-            <section class="serietv-container container"></section>
+
+            <section class="serie-tv grid-container">
+                <!-- GRIGLIA SERIE TV -->
+            </section>
 
         </main>
 
 
 
         <script id="movie-template" type="text/x-handlebars-template">
-            <ul>
-                <li>{{ titolo }}</li>
-                <li>{{ titolo_originale }}</li>
-                <li class="flags {{ lingua }}">{{ lingua }}</li>
-                <li>{{{ voto }}}</li>
-                <li>{{ tipo }}</li>
-            </ul>
+            <div id="single-card">
+                <ul class="poster">
+                    <li>{{{ locandina }}}</li>
+                </ul>
+                <ul class="info">
+                    <li><strong>Titolo: </strong>{{ titolo }}</li>
+                    <li><strong>Titolo originale: </strong>{{ titolo_originale }}</li>
+                    <li class="flags {{ lingua }}">{{ lingua }}</li>
+                    <li>{{{ voto }}}</li>
+                </ul>
+            </div>
         </script>
 
         <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>

@@ -12,7 +12,7 @@ $(document).ready(function() {
     $('.input-cerca').keypress(function (event) {
         if (event.which == 13) {
 
-            $('.movie-container ul').remove();
+            $('.grid-container ul').remove();
             cerca_film();
         }
     });
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
         if (input_utente.length > 1) {
 
-            $('.dvd-container li').remove();
+            $('#movie-template ul').remove();
 
             // effettuo una chiamata ajax per prelevare i dati dei FILM
             $.ajax ({
@@ -47,15 +47,22 @@ $(document).ready(function() {
 
                     for (var i = 0; i < risposta_api.length; i++) {
 
-                        var movie = {
+                        if (risposta_api[i].poster_path != null) {
+                            var tag_url_poster = '<img src="https://image.tmdb.org/t/p/w185' +  risposta_api[i].poster_path + '">';
+                        } else {
+                            var tag_url_poster = '<img src="img/netflix_black.png" alt="null">';
+                        }
+
+                        var film = {
+                            'locandina': tag_url_poster,
                             'titolo': risposta_api[i].title,
                             'titolo_originale': risposta_api[i].original_title,
                             'lingua': risposta_api[i].original_language,
                             'voto': genera_stella(risposta_api[i].vote_average)
                         };
 
-                        var html_card = template(movie);
-                        $('.movie-container').append(html_card);
+                        var html_card = template(film);
+                        $('.movie.grid-container').append(html_card);
                         genera_bandiera(risposta_api[i].original_language)
                     }
                 },
@@ -86,15 +93,22 @@ $(document).ready(function() {
 
                     for (var i = 0; i < risposta_api.length; i++) {
 
-                        var movie = {
+                        if (risposta_api[i].poster_path != null) {
+                            var tag_url_poster = '<img src="https://image.tmdb.org/t/p/w185' +  risposta_api[i].poster_path + '">';
+                        } else {
+                            var tag_url_poster = '<img src="img/netflix_black.png" alt="null">';
+                        }
+
+                        var serietv = {
+                            'locandina': tag_url_poster,
                             'titolo': risposta_api[i].name,
                             'titolo_originale': risposta_api[i].original_name,
                             'lingua': risposta_api[i].original_language,
                             'voto': genera_stella(risposta_api[i].vote_average)
                         };
 
-                        var html_card = template(movie);
-                        $('.serietv-container').append(html_card);
+                        var html_card = template(serietv);
+                        $('.serie-tv.grid-container').append(html_card);
                         genera_bandiera(risposta_api[i].original_language)
                     }
                 },
