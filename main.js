@@ -25,7 +25,7 @@ $(document).ready(function() {
 
         if (input_utente.length > 1) {
 
-            $('#movie-template ul').remove();
+            $('.grid-container').empty();
 
             // effettuo una chiamata ajax per prelevare i dati dei FILM
             $.ajax ({
