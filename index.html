@@ -22,7 +22,7 @@
                 <img class="logo" src="https://i.ya-webdesign.com/images/netflix-logo-png-black-3.png" alt="logo">
 
                 <div class="input-group mb-3">
-                    <input type="text" class="input-cerca form-control" placeholder="Cerca" value="batman" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <input type="text" class="input-cerca form-control" placeholder="Cerca" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                         <button class="search btn btn-outline-secondary" type="button" id="button-addon2"> <i class="material-icons">search</i> </button>
                     </div>
@@ -33,19 +33,19 @@
 
         <main class="wp-container">
 
-            <h5 id="risultato-ricerca-film">
+            <h3 id="risultato-ricerca-film">
                 Risultati di
                 <span class="ricerca-utente-film"></span>
-            </h5>
+            </h3>
 
             <section class="movie grid-container">
                 <!-- GRIGLIA FILM -->
             </section>
 
-            <h5 id="risultato-ricerca-serietv">
+            <h3 id="risultato-ricerca-serietv">
                 Risultati di
                 <span class="ricerca-utente-serietv"></span>
-            </h5>
+            </h3>
 
             <section class="serie-tv grid-container">
                 <!-- GRIGLIA SERIE TV -->
@@ -56,15 +56,15 @@
 
 
         <script id="movie-template" type="text/x-handlebars-template">
-            <div id="single-card">
-                <ul class="poster">
-                    <li>{{{ locandina }}}</li>
-                </ul>
+            <div class="single-card">
                 <ul class="info">
                     <li><strong>Titolo: </strong>{{ titolo }}</li>
                     <li><strong>Titolo originale: </strong>{{ titolo_originale }}</li>
                     <li class="flags {{ lingua }}">{{ lingua }}</li>
                     <li>{{{ voto }}}</li>
+                </ul>
+                <ul class="poster">
+                    <li>{{{ locandina }}}</li>
                 </ul>
             </div>
         </script>

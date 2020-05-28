@@ -86,7 +86,7 @@ $(document).ready(function() {
                 'success': function(data) {
 
                     // Titolo h5 dei risultati di ricerca nel DOM'
-                    $('.ricerca-utente-serietv').text('Serie TV: ' + '"' + input_utente + '"');
+                    $('.ricerca-utente-serietv').text('Serie TV per: ' + '"' + input_utente + '"');
                     $('#risultato-ricerca-serietv').addClass('visible');
 
                     var risposta_api = data.results;

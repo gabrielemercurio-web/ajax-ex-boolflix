@@ -20,7 +20,6 @@ header {
     width: 100%;
     height: 150px;
     background-color: #111;
-    /* background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); */
     z-index: 10;
 }
 
@@ -95,6 +94,13 @@ main {
     display: block;
 }
 
+main h3 {
+    width: 100%;
+    border-bottom: 1px solid red;
+    padding: 10px;
+    text-align: center;
+}
+
 .grid-container {
     display: grid;
     grid-column-gap: 15px;
@@ -117,22 +123,30 @@ ul.poster {
 ul.poster:hover li {
     transform: scale(1.05);
     opacity: 0.07;
+    z-index: -1;
 }
 
 .poster img {
     width: 100%;
 }
 
+.single-card {
+    position: relative;
+}
+
 ul.info {
     padding: 15px;
     color: #fff;
     list-style-type: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 ul.info li {
     font-weight: 200;
     width: 160px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     line-height: 20px;
 }
 
@@ -154,6 +168,7 @@ ul.info strong {
     height: 24px;
 }
 
+
 .flag-italiano {
     background: url('https://api.iconify.design/emojione-v1:flag-for-italy.svg');
     background-repeat: no-repeat;
@@ -171,7 +186,7 @@ ul.info strong {
 .flag-spagnolo {
     background: url('https://api.iconify.design/emojione-v1:flag-for-spain.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     background-size: contain;
 }
 
