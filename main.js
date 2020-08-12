@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
 
-    function cerca_film () {
+    function cerca_film() {
 
         //leggo la query inserita dall'utente all'interno dell'input
         var input_utente = $('.input-cerca').val().trim();
